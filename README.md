@@ -1,5 +1,5 @@
 # EnderSuite
-
+> All the right were assigned to Quelopande the February 19, 2026 by RenderCores.
 > Un ERP moderno e integral para MiPyMEs, construido sobre la robusta plataforma Frappe.
 
 EnderSuite es una solución de software SaaS diseñada para centralizar y optimizar las operaciones de las MiPyMEs. A diferencia de otras herramientas, EnderSuite se enfoca en la facilidad de uso y total integracion a cada uno de los giros de nuestros clientes.
