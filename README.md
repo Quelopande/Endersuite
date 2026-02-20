@@ -1,6 +1,7 @@
 # EnderSuite
 > All the right were assigned to Quelopande the February 19, 2026 by RenderCores.
-> Un ERP moderno e integral para MiPyMEs, construido sobre la robusta plataforma Frappe.
+
+Un ERP moderno e integral para MiPyMEs, construido sobre la robusta plataforma Frappe.
 
 EnderSuite es una solución de software SaaS diseñada para centralizar y optimizar las operaciones de las MiPyMEs. A diferencia de otras herramientas, EnderSuite se enfoca en la facilidad de uso y total integracion a cada uno de los giros de nuestros clientes.
 
@@ -31,9 +32,6 @@ Una vez que tengas acceso a tu instancia de EnderSuite:
 * **Credenciales**: Estas son enviadas al correo
 
 ## 🤝 Contribuciones
-
-Actualmente, el desarrollo de EnderSuite se maneja de forma interna. Si estás interesado en colaborar o reportar un error, por favor contacta a hola@rendercores.online.
-
 > ¡Las contribuciones son bienvenidas! Si deseas contribuir a EnderSuite, por favor:
 > 1.  Haz un "Fork" del proyecto.
 > 2.  Crea una nueva rama para tu feature (`git checkout -b feature/NuevaCaracteristica`).
@@ -55,7 +53,5 @@ Este proyecto está bajo la licencia GNU AFFERO GENERAL PUBLIC LICENSE. Mira el 
 		traducciones y pruebas.
 
 
-**RenderCores** (Desarrolladores de EnderSuite)
-
-* **Web**: www.rendercores.com
-* **Email**: hola@rendercores.online
+# Sobre los derechos de uso
+Los antioguos propietarios de todos los derechos de EnderSuite eran RenderCores. El 19 de Febrero de 2026, RenderCores cedió todos los derechos de EnderSuite y Enderdeploy a Quelopande, que estuvo involucrado como colaborador y/o manteneder en los proyectos nombrados anteriormente.
