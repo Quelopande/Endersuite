@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "RBL-.YYYY.-.MM.-.#####",
+ "creation": "2025-11-30 22:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "field_order": [
+  "section_break_info",
+  "nota_de_venta_original",
+  "sesion_pos",
+  "fecha_reembolso",
+  "motivo",
+  "column_break_1",
+  "cliente",
+  "vendedor",
+  "almacen",
+  "estado",
+  "section_break_productos",
+  "productos_reembolso",
+  "section_break_totales",
+  "total_reembolso",
+  "column_break_totales",
+  "metodo_devolucion",
+  "referencia_devolucion"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_info",
+   "fieldtype": "Section Break",
+   "label": "Información del Reembolso"
+  },
+  {
+   "fieldname": "nota_de_venta_original",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Nota de Venta Original",
+   "options": "Nota de Venta",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "nota_de_venta_original.sesion_pos",
+   "fieldname": "sesion_pos",
+   "fieldtype": "Link",
+   "label": "Sesión POS",
+   "options": "Sesion POS",
+   "read_only": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "fecha_reembolso",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Fecha de Reembolso",
+   "reqd": 1
+  },
+  {
+   "fieldname": "motivo",
+   "fieldtype": "Select",
+   "label": "Motivo",
+   "options": "Producto Defectuoso\\nCliente Insatisfecho\\nError en la Venta\\nOtro",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "nota_de_venta_original.cliente",
+   "fieldname": "cliente",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Cliente",
+   "options": "Cliente",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "nota_de_venta_original.vendedor",
+   "fieldname": "vendedor",
+   "fieldtype": "Link",
+   "label": "Vendedor",
+   "options": "Vendedor",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "nota_de_venta_original.almacen",
+   "fieldname": "almacen",
+   "fieldtype": "Link",
+   "label": "Almacén",
+   "options": "Almacen",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "Borrador",
+   "fieldname": "estado",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Estado",
+   "options": "Borrador\\nAprobado\\nCancelado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_productos",
+   "fieldtype": "Section Break",
+   "label": "Productos a Reembolsar"
+  },
+  {
+   "fieldname": "productos_reembolso",
+   "fieldtype": "Table",
+   "label": "Productos",
+   "options": "Productos Reembolso",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_totales",
+   "fieldtype": "Section Break",
+   "label": "Totales"
+  },
+  {
+   "fieldname": "total_reembolso",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total a Reembolsar",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_totales",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "metodo_devolucion",
+   "fieldtype": "Link",
+   "label": "Método de Devolución",
+   "options": "Metodos de Pago",
+   "reqd": 1
+  },
+  {
+   "fieldname": "referencia_devolucion",
+   "fieldtype": "Data",
+   "label": "Referencia de Devolución"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-30 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ventas",
+ "name": "Reembolso",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cajero POS",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

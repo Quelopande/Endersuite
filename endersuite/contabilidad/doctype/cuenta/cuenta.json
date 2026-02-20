@@ -1,0 +1,104 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "format:{catalogo}-{cuenta}",
+    "creation": "2025-11-28 00:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "cuenta",
+        "catalogo",
+        "is_group",
+        "protected_root",
+        "parent_cuenta",
+        "lft",
+        "rgt",
+        "old_parent"
+    ],
+    "fields": [
+        {
+            "fieldname": "cuenta",
+            "fieldtype": "Data",
+            "label": "Cuenta",
+            "reqd": 1
+        },
+        {
+            "fieldname": "catalogo",
+            "fieldtype": "Link",
+            "in_list_view": 0,
+            "label": "Catálogo",
+            "options": "Catalogo",
+            "reqd": 1,
+            "hidden": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "is_group",
+            "fieldtype": "Check",
+            "label": "Es grupo"
+        },
+        {
+            "default": "0",
+            "fieldname": "protected_root",
+            "fieldtype": "Check",
+            "hidden": 1,
+            "label": "Protegido (raíz)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "parent_cuenta",
+            "fieldtype": "Link",
+            "ignore_user_permissions": 1,
+            "label": "Cuenta Padre",
+            "options": "Cuenta"
+        },
+        {
+            "fieldname": "lft",
+            "fieldtype": "Int",
+            "hidden": 1,
+            "label": "Left",
+            "read_only": 1
+        },
+        {
+            "fieldname": "rgt",
+            "fieldtype": "Int",
+            "hidden": 1,
+            "label": "Right",
+            "read_only": 1
+        },
+        {
+            "fieldname": "old_parent",
+            "fieldtype": "Data",
+            "hidden": 1,
+            "label": "Old Parent"
+        }
+    ],
+    "is_tree": 1,
+    "links": [],
+    "modified": "2025-11-28 00:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Contabilidad",
+    "name": "Cuenta",
+    "nsm_parent_field": "parent_cuenta",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "quick_entry": 1,
+    "row_format": "Dynamic",
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "cuenta"
+}

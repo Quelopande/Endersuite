@@ -1,0 +1,105 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:nombre_lote",
+    "creation": "2025-11-29 14:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "section_break_info",
+        "nombre_lote",
+        "producto",
+        "almacen",
+        "column_break_1",
+        "cantidad_disponible",
+        "fecha_fabricacion",
+        "fecha_vencimiento"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_break_info",
+            "fieldtype": "Section Break",
+            "label": "Informaci\u00f3n del Lote"
+        },
+        {
+            "fieldname": "nombre_lote",
+            "fieldtype": "Data",
+            "label": "Nombre del Lote",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "producto",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Producto",
+            "options": "Producto",
+            "reqd": 1
+        },
+        {
+            "fieldname": "almacen",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Almac\u00e9n",
+            "options": "Almacen"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "0",
+            "fieldname": "cantidad_disponible",
+            "fieldtype": "Float",
+            "in_list_view": 1,
+            "label": "Cantidad Disponible",
+            "reqd": 1
+        },
+        {
+            "fieldname": "fecha_fabricacion",
+            "fieldtype": "Date",
+            "label": "Fecha de Fabricaci\u00f3n"
+        },
+        {
+            "fieldname": "fecha_vencimiento",
+            "fieldtype": "Date",
+            "label": "Fecha de Vencimiento"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-29 14:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Lote",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "read": 1,
+            "role": "Gerente de Ventas",
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "Cajero POS"
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

@@ -1,0 +1,171 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-13 08:17:57.889762",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_8tkn",
+  "amended_from",
+  "fecha",
+  "tipo_de_poliza",
+  "compa\u00f1ia",
+  "a\u00f1o_fiscal",
+  "periodo",
+  "concepto",
+  "movimientos_contables_section",
+  "table_qbss",
+  "totales_section",
+  "total_debe",
+  "total_haber",
+  "diferencia",
+  "cuadra",
+  "referencias_y_documentos_section",
+  "documento_origen",
+  "observaciones"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_8tkn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Poliza",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "fecha",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Fecha",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tipo_de_poliza",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tipo de Poliza",
+   "options": "Diario\nIngreso\nEgreso\nCheque",
+   "reqd": 1
+  },
+  {
+   "fieldname": "compa\u00f1ia",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Compa\u00f1ia",
+   "options": "Compania",
+   "reqd": 1
+  },
+  {
+   "fieldname": "a\u00f1o_fiscal",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "A\u00f1o fiscal",
+   "options": "Anio Fiscal",
+   "reqd": 1
+  },
+  {
+   "fieldname": "periodo",
+   "fieldtype": "Select",
+   "label": "Periodo",
+   "options": "Enero\nFebrero\nMarzo\nAbril\nMayo\nJunio\nJulio\nAgosto\nSeptiembre\nOctubre\nNoviembre\nDiciembre",
+   "reqd": 1
+  },
+  {
+   "description": "Descripci\u00f3n del movimiento",
+   "fieldname": "concepto",
+   "fieldtype": "Small Text",
+   "label": "Concepto",
+   "reqd": 1
+  },
+  {
+   "fieldname": "movimientos_contables_section",
+   "fieldtype": "Section Break",
+   "label": "Movimientos Contables"
+  },
+  {
+   "fieldname": "table_qbss",
+   "fieldtype": "Table",
+   "options": "poliza_movimiento"
+  },
+  {
+   "fieldname": "totales_section",
+   "fieldtype": "Section Break",
+   "label": "Totales"
+  },
+  {
+   "fieldname": "total_debe",
+   "fieldtype": "Currency",
+   "label": "Total debe",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_haber",
+   "fieldtype": "Currency",
+   "label": "Total haber",
+   "read_only": 1
+  },
+  {
+   "fieldname": "diferencia",
+   "fieldtype": "Currency",
+   "label": "Diferencia",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "cuadra",
+   "fieldtype": "Check",
+   "label": "Cuadra?"
+  },
+  {
+   "fieldname": "referencias_y_documentos_section",
+   "fieldtype": "Section Break",
+   "label": "Referencias y Documentos"
+  },
+  {
+   "description": "Factura, recibo, etc.",
+   "fieldname": "documento_origen",
+   "fieldtype": "Data",
+   "label": "Documento origen"
+  },
+  {
+   "description": "Notas adicionales\n",
+   "fieldname": "observaciones",
+   "fieldtype": "Text",
+   "label": "Observaciones"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-13 11:48:29.883847",
+ "modified_by": "Administrator",
+ "module": "Contabilidad",
+ "name": "Poliza",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

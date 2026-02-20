@@ -1,0 +1,175 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "CLI-.#####",
+    "creation": "2025-09-23 16:44:31.814106",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "tipo_de_cliente",
+        "datos_del_cliente_section",
+        "primer_nombre",
+        "segundo_nombre",
+        "column_break_tlhh",
+        "primer_apellido",
+        "segundo_apellido",
+        "razon_social_section",
+        "razon_social",
+        "nombre_comercial",
+        "section_break_auto",
+        "nombre_completo",
+        "datos_personales_section",
+        "rfc",
+        "email",
+        "direccion",
+        "codigo_postal",
+        "column_break_wogc",
+        "tel\u00e9fono_m\u00f3vil",
+        "tel\u00e9fono_fijo"
+    ],
+    "fields": [
+        {
+            "fieldname": "tipo_de_cliente",
+            "fieldtype": "Select",
+            "label": "Tipo de cliente",
+            "options": "Persona F\u00edsica\nPersona Moral\nPublico General Nacional\nPublico General Extranjero",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "datos_del_cliente_section",
+            "fieldtype": "Section Break",
+            "label": "Datos del cliente",
+            "depends_on": "eval:doc.tipo_de_cliente=='Persona F\u00edsica'"
+        },
+        {
+            "fieldname": "primer_nombre",
+            "fieldtype": "Data",
+            "label": "Primer nombre",
+            "mandatory_depends_on": "eval:doc.tipo_de_cliente=='Persona F\u00edsica'"
+        },
+        {
+            "fieldname": "segundo_nombre",
+            "fieldtype": "Data",
+            "label": "Segundo nombre"
+        },
+        {
+            "fieldname": "column_break_tlhh",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "primer_apellido",
+            "fieldtype": "Data",
+            "label": "Primer apellido",
+            "mandatory_depends_on": "eval:doc.tipo_de_cliente=='Persona F\u00edsica'"
+        },
+        {
+            "fieldname": "segundo_apellido",
+            "fieldtype": "Data",
+            "label": "Segundo apellido"
+        },
+        {
+            "fieldname": "razon_social_section",
+            "fieldtype": "Section Break",
+            "label": "Datos de la empresa",
+            "depends_on": "eval:doc.tipo_de_cliente=='Persona Moral'"
+        },
+        {
+            "fieldname": "razon_social",
+            "fieldtype": "Data",
+            "label": "Raz\u00f3n Social",
+            "description": "Nombre legal de la empresa",
+            "mandatory_depends_on": "eval:doc.tipo_de_cliente=='Persona Moral'"
+        },
+        {
+            "fieldname": "nombre_comercial",
+            "fieldtype": "Data",
+            "label": "Nombre Comercial",
+            "description": "Nombre corto o comercial (opcional)"
+        },
+        {
+            "fieldname": "section_break_auto",
+            "fieldtype": "Section Break",
+            "label": "Nombre para facturaci\u00f3n"
+        },
+        {
+            "fieldname": "nombre_completo",
+            "fieldtype": "Data",
+            "label": "Nombre completo",
+            "read_only": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "datos_personales_section",
+            "fieldtype": "Section Break",
+            "label": "Datos personales"
+        },
+        {
+            "fieldname": "rfc",
+            "fieldtype": "Data",
+            "label": "RFC",
+            "description": "Se auto-completa para P\u00fablico General",
+            "read_only_depends_on": "eval:doc.tipo_de_cliente && doc.tipo_de_cliente.includes('Publico General')"
+        },
+        {
+            "fieldname": "email",
+            "fieldtype": "Data",
+            "label": "Email",
+            "options": "Email"
+        },
+        {
+            "fieldname": "direccion",
+            "fieldtype": "Data",
+            "label": "Direccion"
+        },
+        {
+            "fieldname": "column_break_wogc",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "tel\u00e9fono_m\u00f3vil",
+            "fieldtype": "Data",
+            "label": "Tel\u00e9fono (m\u00f3vil)"
+        },
+        {
+            "fieldname": "tel\u00e9fono_fijo",
+            "fieldtype": "Data",
+            "label": "Tel\u00e9fono (fijo)"
+        },
+        {
+            "fieldname": "codigo_postal",
+            "fieldtype": "Data",
+            "label": "C\u00f3digo Postal",
+            "description": "5 d\u00edgitos. Se auto-completa para P\u00fablico General",
+            "reqd": 1,
+            "length": 5
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-18 19:53:19.503774",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Cliente",
+    "naming_rule": "Expression (old style)",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "row_format": "Dynamic",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": []
+}

@@ -1,0 +1,72 @@
+{
+    "actions": [],
+    "creation": "2025-11-30 19:55:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "movimiento",
+        "fecha",
+        "tipo",
+        "referencia",
+        "estado",
+        "usuario"
+    ],
+    "fields": [
+        {
+            "fieldname": "movimiento",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Movimiento",
+            "options": "Movimiento de Stock",
+            "read_only": 1
+        },
+        {
+            "fieldname": "fecha",
+            "fieldtype": "Datetime",
+            "in_list_view": 1,
+            "label": "Fecha",
+            "read_only": 1
+        },
+        {
+            "fieldname": "tipo",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Tipo",
+            "read_only": 1
+        },
+        {
+            "fieldname": "referencia",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Referencia",
+            "read_only": 1
+        },
+        {
+            "fieldname": "estado",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Estado",
+            "read_only": 1
+        },
+        {
+            "fieldname": "usuario",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Usuario",
+            "options": "User",
+            "read_only": 1
+        }
+    ],
+    "istable": 1,
+    "links": [],
+    "modified": "2025-11-30 19:55:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Almacen Movimiento Item",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

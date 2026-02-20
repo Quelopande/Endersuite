@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nombre",
+ "creation": "2025-11-12 17:42:01.064740",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "a\u00f1o_fiscal_section",
+  "nombre",
+  "column_break_jpyx",
+  "desde",
+  "column_break_egdf",
+  "hasta",
+  "section_break_aovv",
+  "empresa",
+  "es_por_defecto",
+  "estado"
+ ],
+ "fields": [
+  {
+   "fieldname": "desde",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha de inicio",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_egdf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hasta",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha de fin",
+   "reqd": 1
+  },
+  {
+   "fieldname": "a\u00f1o_fiscal_section",
+   "fieldtype": "Section Break",
+   "label": "A\u00f1o Fiscal"
+  },
+  {
+   "fieldname": "section_break_aovv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "empresa",
+   "fieldtype": "Link",
+   "label": "Empresa",
+   "options": "Compania"
+  },
+  {
+   "fieldname": "column_break_jpyx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "es_por_defecto",
+   "fieldtype": "Check",
+   "label": "Es por defecto"
+  },
+  {
+   "fieldname": "estado",
+   "fieldtype": "Select",
+   "label": "Estado",
+   "options": "Borrador\nAbierto\nCerrado"
+  },
+  {
+   "description": "(Ej: \"2026\" o \"2026-2027\")",
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre del a\u00f1o fiscal",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-13 13:06:47.104020",
+ "modified_by": "Administrator",
+ "module": "Contabilidad",
+ "name": "Anio Fiscal",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

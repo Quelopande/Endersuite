@@ -1,0 +1,334 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "FV-.#####",
+ "creation": "2025-09-23 16:47:20.785146",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "informacion_general_section",
+  "folio",
+  "column_break_ojnw",
+  "fecha_de_emision",
+  "fecha_de_timbrado",
+  "timbrado_section",
+  "uuid",
+  "column_break_timbrado",
+  "xml_timbrado",
+  "section_break_vqln",
+  "metodo_de_pago",
+  "forma_de_pago",
+  "column_break_pbak",
+  "tipo_de_comprobante",
+  "tipo_de_cambio",
+  "divisa__moneda",
+  "datos_del_emisor_section",
+  "compa\u00f1ia",
+  "column_break_nwcg",
+  "rfc",
+  "column_break_ijat",
+  "regimen_fiscal",
+  "datos_del_receptor_section",
+  "cliente",
+  "nombre_o_razon_social",
+  "codigo_postal_receptor",
+  "column_break_vwjv",
+  "rfc_del_receptor",
+  "regimen_fiscal_receptor",
+  "referencias_section",
+  "notas_relacionadas",
+  "column_break_pwuj",
+  "tabla_con_los_productos_o_servicios",
+  "impuestos_y_totales_section",
+  "subtotal",
+  "column_break_frrg",
+  "descuento_total",
+  "total_de_impuestos_trasladados",
+  "total_de_impuestos_retenidos",
+  "column_break_ibwz",
+  "total",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "informacion_general_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "(En caso de no asignar se asignara uno al guardar) Con los folios: \"FV-0001, FV-0002...\"",
+   "fieldname": "folio",
+   "fieldtype": "Data",
+   "label": "Folio"
+  },
+  {
+   "fieldname": "column_break_ojnw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fecha_de_emision",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha de emision",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "description": "Esta opci\u00f3n se llena de manera autom\u00e1tica al hacer el timbrado en el SAT (Nota: NO HACE FALTA MODIFICARLA)",
+   "fieldname": "fecha_de_timbrado",
+   "fieldtype": "Date",
+   "label": "Fecha de timbrado",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "timbrado_section",
+   "fieldtype": "Section Break",
+   "label": "Datos del Timbrado SAT"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "uuid",
+   "fieldtype": "Data",
+   "label": "UUID (Folio Fiscal)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_timbrado",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "xml_timbrado",
+   "fieldtype": "Long Text",
+   "label": "XML Timbrado",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_vqln",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "Pago en una sola exhibici\u00f3n",
+   "fieldname": "metodo_de_pago",
+   "fieldtype": "Select",
+   "label": "Metodo de Pago",
+   "options": "Pago en una sola exhibici\u00f3n\nPago en parcialidades o diferido",
+   "reqd": 1
+  },
+  {
+   "fieldname": "forma_de_pago",
+   "fieldtype": "Select",
+   "label": "Forma de Pago",
+   "options": "Efectivo\nTransferencia\nTarjeta de cr\u00e9dito o debito",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pbak",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tipo_de_comprobante",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tipo de comprobante",
+   "options": "Ingreso",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "description": "No hace falta cambiarlo si eres de M\u00e9xico",
+   "fieldname": "tipo_de_cambio",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Tipo de cambio",
+   "reqd": 1
+  },
+  {
+   "default": "MXN",
+   "fieldname": "divisa__moneda",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Divisa / Moneda",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "datos_del_emisor_section",
+   "fieldtype": "Section Break",
+   "label": "Datos del Emisor"
+  },
+  {
+   "fieldname": "compa\u00f1ia",
+   "fieldtype": "Link",
+   "label": "Compa\u00f1ia",
+   "options": "Compania",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nwcg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "compa\u00f1ia.rfc",
+   "fieldname": "rfc",
+   "fieldtype": "Data",
+   "label": "RFC",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ijat",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "compa\u00f1ia.regimen_fiscal",
+   "fieldname": "regimen_fiscal",
+   "fieldtype": "Data",
+   "label": "R\u00e9gimen Fiscal ",
+   "reqd": 1
+  },
+  {
+   "description": "En esta tabla tendr\u00e1s que ingresar a tu cliente",
+   "fieldname": "datos_del_receptor_section",
+   "fieldtype": "Section Break",
+   "label": "Datos del Receptor"
+  },
+  {
+   "fieldname": "cliente",
+   "fieldtype": "Link",
+   "label": "Cliente",
+   "options": "Cliente",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "cliente.nombre_completo",
+   "fieldname": "nombre_o_razon_social",
+   "fieldtype": "Data",
+   "label": "Nombre o Razon Social"
+  },
+  {
+   "fetch_from": "cliente.codigo_postal",
+   "fieldname": "codigo_postal_receptor",
+   "fieldtype": "Data",
+   "label": "Codigo Postal Receptor"
+  },
+  {
+   "fieldname": "column_break_vwjv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "cliente.rfc",
+   "fieldname": "rfc_del_receptor",
+   "fieldtype": "Data",
+   "label": "RFC del Receptor"
+  },
+  {
+   "fieldname": "regimen_fiscal_receptor",
+   "fieldtype": "Data",
+   "label": "Regimen Fiscal Receptor"
+  },
+  {
+   "fieldname": "referencias_section",
+   "fieldtype": "Section Break",
+   "label": "Referencias"
+  },
+  {
+   "fieldname": "notas_relacionadas",
+   "fieldtype": "Table",
+   "label": "Notas de Venta Relacionadas",
+   "options": "Nota de Venta Relacionada"
+  },
+  {
+   "fieldname": "tabla_con_los_productos_o_servicios",
+   "fieldtype": "Table",
+   "label": "Tabla con los productos o servicios",
+   "options": "Producto Factura de Ventas"
+  },
+  {
+   "fieldname": "impuestos_y_totales_section",
+   "fieldtype": "Section Break",
+   "label": "Impuestos y Totales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_frrg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descuento_total",
+   "fieldtype": "Currency",
+   "label": "Descuento total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_de_impuestos_trasladados",
+   "fieldtype": "Currency",
+   "label": "Total de impuestos trasladados",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_de_impuestos_retenidos",
+   "fieldtype": "Currency",
+   "label": "Total de impuestos retenidos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ibwz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Factura de Venta",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_pwuj",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-29 18:10:41.441223",
+ "modified_by": "Administrator",
+ "module": "Contabilidad",
+ "name": "Factura de Venta",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

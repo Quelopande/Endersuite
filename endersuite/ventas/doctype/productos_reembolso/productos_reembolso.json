@@ -1,0 +1,64 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-30 22:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "producto",
+  "cantidad_vendida",
+  "cantidad_reembolso",
+  "precio_unitario",
+  "total_reembolso"
+ ],
+ "fields": [
+  {
+   "fieldname": "producto",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Producto",
+   "options": "Producto",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cantidad_vendida",
+   "fieldtype": "Float",
+   "label": "Cantidad Vendida",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cantidad_reembolso",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Cantidad a Reembolsar",
+   "reqd": 1
+  },
+  {
+   "fieldname": "precio_unitario",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Precio Unitario",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_reembolso",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Reembolso",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-30 22:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ventas",
+ "name": "Productos Reembolso",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

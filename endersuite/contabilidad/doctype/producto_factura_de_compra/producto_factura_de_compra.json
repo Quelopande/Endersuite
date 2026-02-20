@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-28 14:49:32.177485",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "producto__servicio",
+  "clave_sat",
+  "clave_unidad_sat",
+  "cantidad",
+  "unidad_de_medida",
+  "descripcion",
+  "valor",
+  "descuento",
+  "total_linea",
+  "porcentaje_iva",
+  "porcentaje_retencion"
+ ],
+ "fields": [
+  {
+   "fieldname": "producto__servicio",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Producto / Servicio",
+   "options": "Producto"
+  },
+  {
+   "fieldname": "clave_sat",
+   "fieldtype": "Data",
+   "label": "Clave SAT"
+  },
+  {
+   "fieldname": "clave_unidad_sat",
+   "fieldtype": "Data",
+   "label": "Clave unidad SAT"
+  },
+  {
+   "fieldname": "cantidad",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Cantidad"
+  },
+  {
+   "fieldname": "unidad_de_medida",
+   "fieldtype": "Data",
+   "label": "Unidad de Medida"
+  },
+  {
+   "fieldname": "descripcion",
+   "fieldtype": "Data",
+   "label": "Descripcion"
+  },
+  {
+   "fieldname": "valor",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Precio"
+  },
+  {
+   "fieldname": "descuento",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Descuento"
+  },
+  {
+   "fieldname": "total_linea",
+   "fieldtype": "Currency",
+   "label": "Total de linea",
+   "read_only": 1
+  },
+  {
+   "fieldname": "porcentaje_iva",
+   "fieldtype": "Percent",
+   "label": "% IVA"
+  },
+  {
+   "fieldname": "porcentaje_retencion",
+   "fieldtype": "Percent",
+   "label": "% Retenci\u00f3n"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-28 13:02:52.150193",
+ "modified_by": "Administrator",
+ "module": "Contabilidad",
+ "name": "Producto Factura de Compra",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

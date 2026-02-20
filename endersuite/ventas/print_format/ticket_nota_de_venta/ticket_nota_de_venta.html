@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        @media print {
+            @page {
+                size: 80mm auto;
+                margin: 0;
+            }
+
+            body {
+                width: 80mm;
+                margin: 0;
+                padding: 5mm;
+            }
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            line-height: 1.4;
+            max-width: 80mm;
+            margin: 0 auto;
+            padding: 5mm;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #000;
+            padding-bottom: 10px;
+        }
+
+        .header h2 {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .header p {
+            margin: 2px 0;
+            font-size: 9px;
+        }
+
+        .info-section {
+            margin: 10px 0;
+            font-size: 9px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 3px 0;
+        }
+
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 9px;
+        }
+
+        .items-table th {
+            border-bottom: 1px solid #000;
+            padding: 4px 2px;
+            text-align: left;
+        }
+
+        .items-table td {
+            padding: 4px 2px;
+            vertical-align: top;
+        }
+
+        .items-table .producto {
+            max-width: 30mm;
+            word-wrap: break-word;
+        }
+
+        .items-table .cantidad {
+            text-align: center;
+            width: 15mm;
+        }
+
+        .items-table .precio,
+        .items-table .total {
+            text-align: right;
+            width: 15mm;
+        }
+
+        .totales-section {
+            border-top: 1px solid #000;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 3px 0;
+            font-size: 9px;
+        }
+
+        .total-final {
+            font-weight: bold;
+            font-size: 11px;
+            border-top: 1px dashed #000;
+            padding-top: 5px;
+            margin-top: 5px;
+        }
+
+        .pagos-section {
+            margin: 10px 0;
+            padding: 8px 0;
+            border-top: 1px dashed #000;
+            font-size: 9px;
+        }
+
+        .cambio-destacado {
+            font-weight: bold;
+            font-size: 11px;
+            text-align: center;
+            margin: 10px 0;
+            padding: 5px;
+            background: #f0f0f0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #000;
+            font-size: 9px;
+        }
+
+        .barcode {
+            text-align: center;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        {% if doc.perfil_pos %}
+        {% set perfil = frappe.get_doc('Perfil de POS', doc.perfil_pos) %}
+        {% if perfil.compania %}
+        {% set company = frappe.get_doc('Compania', perfil.compania) %}
+        <h2>{{ company.name }}</h2>
+        {% if company.razon_social %}
+        <p>{{ company.razon_social }}</p>
+        {% endif %}
+        {% else %}
+        <h2>{{ doc.perfil_pos }}</h2>
+        {% endif %}
+        {% else %}
+        <h2>EnderSuite POS</h2>
+        {% endif %}
+
+        {% if doc.punto_de_venta %}
+        <p>{{ doc.punto_de_venta }}</p>
+        {% endif %}
+
+        <p>TICKET DE VENTA</p>
+    </div>
+
+    <!-- INFO GENERAL -->
+    <div class="info-section">
+        <div class="info-row">
+            <span>Nota de Venta:</span>
+            <strong>{{ doc.name }}</strong>
+        </div>
+        <div class="info-row">
+            <span>Fecha:</span>
+            <span>{{ frappe.utils.format_datetime(doc.fecha_y_hora_de_venta, "dd/MM/yyyy HH:mm") }}</span>
+        </div>
+        {% if doc.cliente %}
+        <div class="info-row">
+            <span>Cliente:</span>
+            <span>{{ doc.cliente }}</span>
+        </div>
+        {% endif %}
+        {% if doc.sesion_pos %}
+        <div class="info-row">
+            <span>Sesión:</span>
+            <span>{{ doc.sesion_pos }}</span>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- ITEMS -->
+    <table class="items-table">
+        <thead>
+            <tr>
+                <th class="producto">Producto</th>
+                <th class="cantidad">Cant.</th>
+                <th class="precio">Precio</th>
+                <th class="total">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in doc.tabla_de_productos %}
+            <tr>
+                <td class="producto">
+                    {{ item.producto[:25] }}
+                    {% if item.sku %}
+                    <br><small>SKU: {{ item.sku }}</small>
+                    {% endif %}
+                </td>
+                <td class="cantidad">{{ item.cantidad }}</td>
+                <td class="precio">{{ frappe.utils.fmt_money(item.precio_unitario, currency="MXN") }}</td>
+                <td class="total">{{ frappe.utils.fmt_money(item.total_linea, currency="MXN") }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- TOTALES -->
+    <div class="totales-section">
+        <div class="total-row">
+            <span>Subtotal:</span>
+            <span>{{ frappe.utils.fmt_money(doc.subtotal, currency="MXN") }}</span>
+        </div>
+
+        {% if doc.descuento_global_monto and doc.descuento_global_monto > 0 %}
+        <div class="total-row">
+            <span>Descuento:</span>
+            <span>-{{ frappe.utils.fmt_money(doc.descuento_global_monto, currency="MXN") }}</span>
+        </div>
+        {% endif %}
+
+        <div class="total-row">
+            <span>Impuestos:</span>
+            <span>{{ frappe.utils.fmt_money(doc.total_impuestos, currency="MXN") }}</span>
+        </div>
+
+        <div class="total-row total-final">
+            <span>TOTAL:</span>
+            <strong>{{ frappe.utils.fmt_money(doc.total_final, currency="MXN") }}</strong>
+        </div>
+    </div>
+
+    <!-- MÉTODOS DE PAGO -->
+    <div class="pagos-section">
+        <strong>MÉTODOS DE PAGO:</strong>
+        {% for pago in doc.metodos_pago_nota %}
+        <div class="total-row">
+            <span>{{ pago.metodo }}:</span>
+            <span>{{ frappe.utils.fmt_money(pago.monto, currency="MXN") }}</span>
+        </div>
+        {% endfor %}
+
+        {% if doc.cambio and doc.cambio > 0 %}
+        <div class="cambio-destacado">
+            CAMBIO: {{ frappe.utils.fmt_money(doc.cambio, currency="MXN") }}
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- BARCODE -->
+    <div class="barcode">
+        {{ doc.name }}
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>¡Gracias por su compra!</p>
+        <p>Este documento es un comprobante de venta</p>
+        {% if frappe.utils.now_datetime() %}
+        <p style="font-size: 8px; margin-top: 8px;">
+            Impreso: {{ frappe.utils.format_datetime(frappe.utils.now_datetime(), "dd/MM/yyyy HH:mm:ss") }}
+        </p>
+        {% endif %}
+    </div>
+</body>
+
+</html>

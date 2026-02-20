@@ -1,0 +1,93 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:iniciales_de_la_empresa",
+    "creation": "2025-11-13 00:33:21.960347",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "anio_fiscal",
+        "nombre_de_la_empresa",
+        "iniciales_de_la_empresa",
+        "rfc",
+        "tipo_de_persona",
+        "catalogo",
+        "regimen_fiscal"
+    ],
+    "fields": [
+        {
+            "fieldname": "anio_fiscal",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "A\u00f1o fiscal",
+            "options": "Anio Fiscal",
+            "reqd": 1
+        },
+        {
+            "fieldname": "nombre_de_la_empresa",
+            "fieldtype": "Data",
+            "label": "Nombre de la empresa",
+            "reqd": 1
+        },
+        {
+            "fieldname": "iniciales_de_la_empresa",
+            "fieldtype": "Data",
+            "label": "Iniciales de la empresa",
+            "read_only": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "catalogo",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Cat\u00e1logo de Cuentas",
+            "options": "Catalogo",
+            "reqd": 1
+        },
+        {
+            "fieldname": "rfc",
+            "fieldtype": "Data",
+            "label": "RFC"
+        },
+        {
+            "fieldname": "tipo_de_persona",
+            "fieldtype": "Select",
+            "label": "Tipo de persona",
+            "options": "Fisica\nMoral"
+        },
+        {
+            "default": "616 SIN OBLIGACIONES FISCALES",
+            "fieldname": "regimen_fiscal",
+            "fieldtype": "Select",
+            "label": "R\u00e9gimen Fiscal",
+            "options": "601 REGIMEN GENERAL DE LEY PERSONAS MORALES\n602 R\u00c9GIMEN SIMPLIFICADO DE LEY PERSONAS MORALES\n603 PERSONAS MORALES CON FINES NO LUCRATIVOS\n604 R\u00c9GIMEN DE PEQUE\u00d1OS CONTRIBUYENTES\n605 R\u00c9GIMEN DE SUELDOS Y SALARIOS E INGRESOS ASIMILADOS A SALARIOS\n606 R\u00c9GIMEN DE ARRENDAMIENTO\n607 R\u00c9GIMEN DE ENAJENACI\u00d3N O ADQUISICI\u00d3N DE BIENES\n608 R\u00c9GIMEN DE LOS DEM\u00c1S INGRESOS\n609 R\u00c9GIMEN DE CONSOLIDACI\u00d3N\n610 R\u00c9GIMEN RESIDENTES EN EL EXTRANJERO SIN ESTABLECIMIENTO PERMANENTE EN M\u00c9XICO\n611 R\u00c9GIMEN DE INGRESOS POR DIVIDENDOS (SOCIOS Y ACCIONISTAS)\n612 R\u00c9GIMEN DE LAS PERSONAS F\u00cdSICAS CON ACTIVIDADES EMPRESARIALES Y PROFESIONALES\n613 R\u00c9GIMEN INTERMEDIO DE LAS PERSONAS F\u00cdSICAS CON ACTIVIDADES EMPRESARIALES\n614 R\u00c9GIMEN DE LOS INGRESOS POR INTERESES\n615 R\u00c9GIMEN DE LOS INGRESOS POR OBTENCI\u00d3N DE PREMIOS\n616 SIN OBLIGACIONES FISCALES\n617 PEMEX\n618 R\u00c9GIMEN SIMPLIFICADO DE LEY PERSONAS F\u00cdSICAS\n619 INGRESOS POR LA OBTENCI\u00d3N DE PR\u00c9STAMOS\n620 SOCIEDADES COOPERATIVAS DE PRODUCCI\u00d3N QUE OPTAN POR DIFERIR SUS INGRESOS.\n621 R\u00c9GIMEN DE INCORPORACI\u00d3N FISCAL\n622 R\u00c9GIMEN DE ACTIVIDADES AGR\u00cdCOLAS, GANADERAS, SILV\u00cdCOLAS Y PESQUERAS PM\n623 R\u00c9GIMEN DE OPCIONAL PARA GRUPOS DE SOCIEDADES\n624 R\u00c9GIMEN DE LOS COORDINADOS\n625 R\u00c9GIMEN DE LAS ACTIVIDADES EMPRESARIALES CON INGRESOS A TRAV\u00c9S DE PLATAFORMAS TECNOL\u00d3GICAS.\n626 R\u00c9GIMEN SIMPLIFICADO DE CONFIANZA"
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-12-03 05:05:05.878800",
+    "modified_by": "Administrator",
+    "module": "Contabilidad",
+    "name": "Compania",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "row_format": "Dynamic",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": []
+}

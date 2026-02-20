@@ -1,0 +1,199 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-19 00:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "seccion_general",
+  "nombre_pac",
+  "modo",
+  "column_break_config",
+  "activo",
+  "seccion_credenciales",
+  "cuenta",
+  "column_break_cred",
+  "api_key",
+  "seccion_certificados",
+  "csd_key_pem",
+  "column_break_cert",
+  "csd_cer_pem",
+  "seccion_urls",
+  "url_timbrado_json",
+  "url_timbrado_xml",
+  "column_break_urls",
+  "url_cancelacion",
+  "seccion_emisor_pruebas",
+  "rfc_pruebas",
+  "regimen_fiscal_pruebas",
+  "column_break_emisor",
+  "nombre_pruebas",
+  "certificado_numero_pruebas"
+ ],
+ "fields": [
+  {
+   "fieldname": "seccion_general",
+   "fieldtype": "Section Break",
+   "label": "Informaci\u00f3n General"
+  },
+  {
+   "default": "FacturAPI",
+   "fieldname": "nombre_pac",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre del PAC",
+   "reqd": 1
+  },
+  {
+   "default": "Pruebas",
+   "fieldname": "modo",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Modo",
+   "options": "Pruebas\nProducci\u00f3n",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_config",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "activo",
+   "fieldtype": "Check",
+   "label": "Activo"
+  },
+  {
+   "fieldname": "seccion_credenciales",
+   "fieldtype": "Section Break",
+   "label": "Credenciales"
+  },
+  {
+   "default": "cmVuZGVyY29yZXM=",
+   "fieldname": "cuenta",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Cuenta/Usuario",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cred",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "OTk0MzYyZWQyZTdhNDRhNzlhNjg5ZjZlNDMzODk0YzA=",
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "API Key",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "seccion_certificados",
+   "fieldtype": "Section Break",
+   "label": "Certificados CSD"
+  },
+  {
+   "description": "Contenido de la llave privada del CSD en formato PEM o Base64",
+   "fieldname": "csd_key_pem",
+   "fieldtype": "Long Text",
+   "label": "Llave Privada CSD (PEM/Base64)"
+  },
+  {
+   "fieldname": "column_break_cert",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Contenido del certificado p\u00fablico del CSD en formato PEM o Base64",
+   "fieldname": "csd_cer_pem",
+   "fieldtype": "Long Text",
+   "label": "Certificado CSD (PEM/Base64)"
+  },
+  {
+   "fieldname": "seccion_urls",
+   "fieldtype": "Section Break",
+   "label": "URLs del Servicio"
+  },
+  {
+   "default": "https://dev.facturaloplus.com/api/rest/servicio/timbrarJSON2",
+   "fieldname": "url_timbrado_json",
+   "fieldtype": "Data",
+   "label": "URL Timbrado JSON",
+   "reqd": 1
+  },
+  {
+   "default": "https://dev.facturaloplus.com/api/rest/servicio/timbrar",
+   "fieldname": "url_timbrado_xml",
+   "fieldtype": "Data",
+   "label": "URL Timbrado XML"
+  },
+  {
+   "fieldname": "column_break_urls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "url_cancelacion",
+   "fieldtype": "Data",
+   "label": "URL Cancelaci\u00f3n"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "seccion_emisor_pruebas",
+   "fieldtype": "Section Break",
+   "label": "Datos del Emisor para Pruebas"
+  },
+  {
+   "default": "EKU9003173C9",
+   "fieldname": "rfc_pruebas",
+   "fieldtype": "Data",
+   "label": "RFC Pruebas"
+  },
+  {
+   "default": "601",
+   "fieldname": "regimen_fiscal_pruebas",
+   "fieldtype": "Data",
+   "label": "R\u00e9gimen Fiscal Pruebas"
+  },
+  {
+   "fieldname": "column_break_emisor",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "ESCUELA KEMPER URGATE",
+   "fieldname": "nombre_pruebas",
+   "fieldtype": "Data",
+   "label": "Nombre Pruebas"
+  },
+  {
+   "default": "30001000000500003416",
+   "fieldname": "certificado_numero_pruebas",
+   "fieldtype": "Data",
+   "label": "No. Certificado Pruebas"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-12-11 19:53:43.572783",
+ "modified_by": "Administrator",
+ "module": "Contabilidad",
+ "name": "Configuracion PAC",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,134 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2025-11-29 13:11:41.715769",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "producto",
+        "sku",
+        "cantidad",
+        "precio_unitario",
+        "subtotal_sin_impuesto",
+        "descuento_porcentaje",
+        "descuento_monto",
+        "base_imponible",
+        "impuesto",
+        "porcentaje_impuesto",
+        "impuesto_monto",
+        "total_linea",
+        "section_break_lotes",
+        "detalle_lote_serie"
+    ],
+    "fields": [
+        {
+            "fieldname": "producto",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Producto",
+            "options": "Producto",
+            "reqd": 1
+        },
+        {
+            "fetch_from": "producto.sku",
+            "fieldname": "sku",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "SKU",
+            "read_only": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "cantidad",
+            "fieldtype": "Float",
+            "in_list_view": 1,
+            "label": "Cantidad",
+            "reqd": 1
+        },
+        {
+            "fieldname": "precio_unitario",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "label": "Precio Unitario",
+            "reqd": 1
+        },
+        {
+            "fieldname": "subtotal_sin_impuesto",
+            "fieldtype": "Currency",
+            "label": "Subtotal Sin Impuesto",
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "descuento_porcentaje",
+            "fieldtype": "Percent",
+            "label": "Descuento %"
+        },
+        {
+            "fieldname": "descuento_monto",
+            "fieldtype": "Currency",
+            "label": "Descuento Monto",
+            "read_only": 1
+        },
+        {
+            "fieldname": "base_imponible",
+            "fieldtype": "Currency",
+            "label": "Base Imponible",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "producto.tipo_de_impuesto",
+            "fieldname": "impuesto",
+            "fieldtype": "Link",
+            "label": "Impuesto",
+            "options": "Impuestos"
+        },
+        {
+            "fetch_from": "impuesto.porciento_impuesto",
+            "fieldname": "porcentaje_impuesto",
+            "fieldtype": "Percent",
+            "label": "Porcentaje Impuesto",
+            "read_only": 1
+        },
+        {
+            "fieldname": "impuesto_monto",
+            "fieldtype": "Currency",
+            "label": "Impuesto Monto",
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_linea",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "label": "Total L\u00ednea",
+            "read_only": 1
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_lotes",
+            "fieldtype": "Section Break",
+            "label": "Lotes y Series"
+        },
+        {
+            "fieldname": "detalle_lote_serie",
+            "fieldtype": "Table",
+            "label": "Detalle Lote/Serie",
+            "options": "Detalle Lote Serie"
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-11-29 14:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Tabla de Productos",
+    "owner": "Administrator",
+    "permissions": [],
+    "row_format": "Dynamic",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": []
+}

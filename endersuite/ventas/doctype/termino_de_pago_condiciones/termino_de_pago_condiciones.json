@@ -1,0 +1,48 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-11-25 16:22:02.329919",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "porci\u00f3n_de_factura",
+  "d\u00edas_de_cr\u00e9dito",
+  "descripci\u00f3n"
+ ],
+ "fields": [
+  {
+   "fieldname": "porci\u00f3n_de_factura",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Porci\u00f3n de Factura",
+   "reqd": 1
+  },
+  {
+   "fieldname": "d\u00edas_de_cr\u00e9dito",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "D\u00edas de Cr\u00e9dito",
+   "reqd": 1
+  },
+  {
+   "fieldname": "descripci\u00f3n",
+   "fieldtype": "Date",
+   "label": "Descripci\u00f3n"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-11-25 16:22:54.375159",
+ "modified_by": "Administrator",
+ "module": "Ventas",
+ "name": "Termino de Pago Condiciones",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,302 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "naming_series:",
+    "creation": "2025-11-28 17:21:06.402714",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "naming_series",
+        "section_break_info",
+        "sesion_pos",
+        "perfil_pos",
+        "punto_de_venta",
+        "almacen",
+        "column_break_1",
+        "fecha_y_hora_de_venta",
+        "cliente",
+        "vendedor",
+        "lista_de_precios",
+        "section_break_productos",
+        "tabla_de_productos",
+        "section_break_totales",
+        "subtotal",
+        "descuento_global_porcentaje",
+        "descuento_global_monto",
+        "column_break_totales",
+        "base_imponible_total",
+        "total_impuestos",
+        "total_final",
+        "section_break_pago",
+        "metodos_pago_nota",
+        "column_break_pago",
+        "total_pagado",
+        "cambio",
+        "section_break_estado",
+        "estado_impresion",
+        "estado_facturacion",
+        "factura_de_venta",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "default": "NV-.YYYY.-.MM.-.#####",
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "hidden": 1,
+            "label": "Serie",
+            "options": "NV-.YYYY.-.MM.-.#####\nNV-POS-.YYYY.-.#####\nNV-.#####",
+            "reqd": 1
+        },
+        {
+            "collapsible": 0,
+            "fieldname": "section_break_info",
+            "fieldtype": "Section Break",
+            "label": "Informaci\u00f3n de la Venta"
+        },
+        {
+            "fieldname": "sesion_pos",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Sesi\u00f3n POS",
+            "options": "Sesion POS"
+        },
+        {
+            "fieldname": "perfil_pos",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Perfil POS",
+            "options": "Perfil de POS"
+        },
+        {
+            "fetch_from": "perfil_pos.punto_de_venta",
+            "fieldname": "punto_de_venta",
+            "fieldtype": "Link",
+            "label": "Punto de Venta",
+            "options": "Punto de Venta",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "perfil_pos.almacen",
+            "fieldname": "almacen",
+            "fieldtype": "Link",
+            "label": "Almac\u00e9n",
+            "options": "Almacen",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "now",
+            "fieldname": "fecha_y_hora_de_venta",
+            "fieldtype": "Datetime",
+            "in_list_view": 1,
+            "label": "Fecha y Hora de Venta",
+            "reqd": 1
+        },
+        {
+            "fieldname": "cliente",
+            "fieldtype": "Link",
+            "in_standard_filter": 1,
+            "label": "Cliente",
+            "options": "Cliente",
+            "reqd": 1
+        },
+        {
+            "fetch_from": "sesion_pos.vendedor",
+            "fieldname": "vendedor",
+            "fieldtype": "Link",
+            "in_standard_filter": 1,
+            "label": "Vendedor",
+            "options": "Vendedor",
+            "read_only": 1
+        },
+        {
+            "fetch_from": "perfil_pos.lista_de_precios",
+            "fieldname": "lista_de_precios",
+            "fieldtype": "Link",
+            "label": "Lista de Precios",
+            "options": "Lista de Precios"
+        },
+        {
+            "collapsible": 0,
+            "fieldname": "section_break_productos",
+            "fieldtype": "Section Break",
+            "label": "Productos"
+        },
+        {
+            "fieldname": "tabla_de_productos",
+            "fieldtype": "Table",
+            "label": "Productos",
+            "options": "Tabla de Productos",
+            "reqd": 1
+        },
+        {
+            "collapsible": 0,
+            "fieldname": "section_break_totales",
+            "fieldtype": "Section Break",
+            "label": "Totales"
+        },
+        {
+            "fieldname": "subtotal",
+            "fieldtype": "Currency",
+            "label": "Subtotal",
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "descuento_global_porcentaje",
+            "fieldtype": "Percent",
+            "label": "Descuento Global %"
+        },
+        {
+            "fieldname": "descuento_global_monto",
+            "fieldtype": "Currency",
+            "label": "Descuento Global Monto",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_totales",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "base_imponible_total",
+            "fieldtype": "Currency",
+            "label": "Base Imponible Total",
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_impuestos",
+            "fieldtype": "Currency",
+            "label": "Total Impuestos",
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_final",
+            "fieldtype": "Currency",
+            "label": "Total Final",
+            "read_only": 1
+        },
+        {
+            "collapsible": 0,
+            "fieldname": "section_break_pago",
+            "fieldtype": "Section Break",
+            "label": "M\u00e9todos de Pago"
+        },
+        {
+            "fieldname": "metodos_pago_nota",
+            "fieldtype": "Table",
+            "label": "M\u00e9todos de Pago",
+            "options": "Metodos de Pago Nota"
+        },
+        {
+            "fieldname": "column_break_pago",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "total_pagado",
+            "fieldtype": "Currency",
+            "label": "Total Pagado",
+            "read_only": 1
+        },
+        {
+            "fieldname": "cambio",
+            "fieldtype": "Currency",
+            "label": "Cambio",
+            "read_only": 1
+        },
+        {
+            "collapsible": 0,
+            "fieldname": "section_break_estado",
+            "fieldtype": "Section Break",
+            "label": "Estado"
+        },
+        {
+            "default": "Pendiente",
+            "fieldname": "estado_impresion",
+            "fieldtype": "Select",
+            "label": "Estado de Impresi\u00f3n",
+            "options": "Pendiente\nImpreso\nNo Requiere"
+        },
+        {
+            "default": "Pendiente",
+            "fieldname": "estado_facturacion",
+            "fieldtype": "Select",
+            "label": "Estado de Facturaci\u00f3n",
+            "options": "Pendiente\nFacturado",
+            "read_only": 1
+        },
+        {
+            "fieldname": "factura_de_venta",
+            "fieldtype": "Link",
+            "label": "Factura de Venta",
+            "options": "Factura de Venta",
+            "read_only": 1
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Nota de Venta",
+            "print_hide": 1,
+            "read_only": 1,
+            "search_index": 1
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2025-11-29 15:43:19.432190",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Nota de Venta",
+    "naming_rule": "Expression",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Gerente de Ventas",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "Cajero POS",
+            "submit": 1,
+            "write": 1
+        }
+    ],
+    "row_format": "Dynamic",
+    "search_fields": "cliente,sesion_pos,punto_de_venta",
+    "show_name_in_global_search": 1,
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": null
+}

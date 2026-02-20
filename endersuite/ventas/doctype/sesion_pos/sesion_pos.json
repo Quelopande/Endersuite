@@ -1,0 +1,232 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "hash",
+    "creation": "2025-11-29 14:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "is_submittable": 1,
+    "field_order": [
+        "section_break_info",
+        "perfil_pos",
+        "punto_de_venta",
+        "usuario",
+        "vendedor",
+        "column_break_1",
+        "fecha_hora_apertura",
+        "fecha_hora_cierre",
+        "estado",
+        "section_break_apertura",
+        "monto_apertura",
+        "section_break_ventas",
+        "ventas",
+        "section_break_totales",
+        "total_efectivo_sistema",
+        "total_tarjeta_sistema",
+        "total_transferencia_sistema",
+        "column_break_totales",
+        "total_cheque_sistema",
+        "total_general_sistema",
+        "section_break_cierre",
+        "efectivo_contado",
+        "diferencia",
+        "column_break_cierre",
+        "observaciones"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_break_info",
+            "fieldtype": "Section Break",
+            "label": "Informaci\u00f3n de Sesi\u00f3n"
+        },
+        {
+            "fieldname": "perfil_pos",
+            "fieldtype": "Link",
+            "label": "Perfil POS",
+            "options": "Perfil de POS",
+            "reqd": 1
+        },
+        {
+            "fetch_from": "perfil_pos.punto_de_venta",
+            "fieldname": "punto_de_venta",
+            "fieldtype": "Link",
+            "label": "Punto de Venta",
+            "options": "Punto de Venta",
+            "read_only": 1
+        },
+        {
+            "default": "__user",
+            "fieldname": "usuario",
+            "fieldtype": "Link",
+            "label": "Usuario",
+            "options": "User",
+            "reqd": 1
+        },
+        {
+            "fieldname": "vendedor",
+            "fieldtype": "Link",
+            "label": "Vendedor",
+            "options": "Vendedor"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "now",
+            "fieldname": "fecha_hora_apertura",
+            "fieldtype": "Datetime",
+            "label": "Fecha y Hora de Apertura",
+            "reqd": 1
+        },
+        {
+            "fieldname": "fecha_hora_cierre",
+            "fieldtype": "Datetime",
+            "label": "Fecha y Hora de Cierre"
+        },
+        {
+            "default": "Abierta",
+            "fieldname": "estado",
+            "fieldtype": "Select",
+            "label": "Estado",
+            "options": "Abierta\nCerrada",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_apertura",
+            "fieldtype": "Section Break",
+            "label": "Apertura"
+        },
+        {
+            "fieldname": "monto_apertura",
+            "fieldtype": "Currency",
+            "label": "Monto de Apertura",
+            "reqd": 1
+        },
+        {
+            "fieldname": "section_break_ventas",
+            "fieldtype": "Section Break",
+            "label": "Ventas de la Sesi\u00f3n"
+        },
+        {
+            "fieldname": "ventas",
+            "fieldtype": "Table",
+            "label": "Ventas",
+            "options": "Ventas Sesion POS"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_totales",
+            "fieldtype": "Section Break",
+            "label": "Totales del Sistema"
+        },
+        {
+            "fieldname": "total_efectivo_sistema",
+            "fieldtype": "Currency",
+            "label": "Total Efectivo Sistema",
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_tarjeta_sistema",
+            "fieldtype": "Currency",
+            "label": "Total Tarjeta Sistema",
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_transferencia_sistema",
+            "fieldtype": "Currency",
+            "label": "Total Transferencia Sistema",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_totales",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "total_cheque_sistema",
+            "fieldtype": "Currency",
+            "label": "Total Cheque Sistema",
+            "read_only": 1
+        },
+        {
+            "fieldname": "total_general_sistema",
+            "fieldtype": "Currency",
+            "label": "Total General Sistema",
+            "read_only": 1
+        },
+        {
+            "collapsible": 1,
+            "depends_on": "eval:doc.estado=='Cerrada'",
+            "fieldname": "section_break_cierre",
+            "fieldtype": "Section Break",
+            "label": "Cierre y Arqueo"
+        },
+        {
+            "fieldname": "efectivo_contado",
+            "fieldtype": "Currency",
+            "label": "Efectivo Contado"
+        },
+        {
+            "fieldname": "diferencia",
+            "fieldtype": "Currency",
+            "label": "Diferencia (Contado - Sistema)",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_cierre",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "observaciones",
+            "fieldtype": "Text",
+            "label": "Observaciones"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-29 14:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Sesion POS",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Gerente de Ventas",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "Cajero POS",
+            "submit": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

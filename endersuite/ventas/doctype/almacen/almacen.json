@@ -1,0 +1,124 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "format:ALM-{nombre_del_almacen}",
+    "creation": "2025-11-28 17:06:13.445670",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "configuracion_de_almacen_section",
+        "nombre_del_almacen",
+        "tipo_de_almacen",
+        "empresa__compa\u00f1ia",
+        "direccion__domicilio",
+        "responsable",
+        "almacen_activo",
+        "operaciones_tab",
+        "permite_ventas",
+        "permite_compras",
+        "proposito",
+        "movimientos_tab"
+    ],
+    "fields": [
+        {
+            "fieldname": "nombre_del_almacen",
+            "fieldtype": "Data",
+            "label": "Nombre del Almacen"
+        },
+        {
+            "fieldname": "tipo_de_almacen",
+            "fieldtype": "Select",
+            "label": "Tipo de Almacen",
+            "options": "Principal\nTienda\nTr\u00e1nsito\nDevoluciones\nMateria prima\nProducto terminado"
+        },
+        {
+            "fieldname": "empresa__compa\u00f1ia",
+            "fieldtype": "Link",
+            "label": "Empresa / Compa\u00f1ia",
+            "options": "Compania"
+        },
+        {
+            "fieldname": "direccion__domicilio",
+            "fieldtype": "Data",
+            "label": "Direccion / Domicilio"
+        },
+        {
+            "fieldname": "responsable",
+            "fieldtype": "Link",
+            "label": "Responsable",
+            "options": "User"
+        },
+        {
+            "default": "0",
+            "fieldname": "almacen_activo",
+            "fieldtype": "Check",
+            "label": "\u00bfAlmacen activo?"
+        },
+        {
+            "fieldname": "configuracion_de_almacen_section",
+            "fieldtype": "Section Break",
+            "label": "Configuracion de Almacen"
+        },
+        {
+            "description": "Breve descripcion",
+            "fieldname": "operaciones_tab",
+            "fieldtype": "Tab Break",
+            "label": "Operaciones"
+        },
+        {
+            "default": "0",
+            "fieldname": "permite_ventas",
+            "fieldtype": "Check",
+            "label": "Permite ventas"
+        },
+        {
+            "default": "0",
+            "fieldname": "permite_compras",
+            "fieldtype": "Check",
+            "label": "Permite compras"
+        },
+        {
+            "description": "Breve descripcion",
+            "fieldname": "proposito",
+            "fieldtype": "Text",
+            "label": "Proposito"
+        },
+        {
+            "fieldname": "movimientos_tab",
+            "fieldtype": "Tab Break",
+            "label": "Movimientos"
+        },
+        {
+            "fieldname": "movimientos_html",
+            "fieldtype": "HTML",
+            "label": "Movimientos HTML"
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-30 12:48:32.489092",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Almacen",
+    "naming_rule": "Expression",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "row_format": "Dynamic",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": []
+}

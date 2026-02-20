@@ -1,0 +1,183 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:nombre_formato",
+    "creation": "2025-12-02 18:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "nombre_formato",
+        "descripcion",
+        "predeterminado",
+        "section_break_diseno",
+        "ancho_ticket",
+        "fuente",
+        "tamano_fuente",
+        "column_break_diseno",
+        "mostrar_logo",
+        "alinear_header",
+        "section_break_contenido",
+        "header_html",
+        "section_break_items",
+        "items_html",
+        "section_break_footer",
+        "footer_html",
+        "section_break_estilos",
+        "estilos_css"
+    ],
+    "fields": [
+        {
+            "fieldname": "nombre_formato",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Nombre del Formato",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "descripcion",
+            "fieldtype": "Small Text",
+            "label": "Descripci\u00f3n"
+        },
+        {
+            "default": "0",
+            "fieldname": "predeterminado",
+            "fieldtype": "Check",
+            "label": "Formato Predeterminado"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_diseno",
+            "fieldtype": "Section Break",
+            "label": "Configuraci\u00f3n de Dise\u00f1o"
+        },
+        {
+            "default": "80mm",
+            "fieldname": "ancho_ticket",
+            "fieldtype": "Select",
+            "label": "Ancho del Ticket",
+            "options": "58mm\n80mm\nCarta"
+        },
+        {
+            "default": "Courier New",
+            "fieldname": "fuente",
+            "fieldtype": "Select",
+            "label": "Fuente",
+            "options": "Courier New\nArial\nRoboto\nMonospace"
+        },
+        {
+            "default": "10",
+            "fieldname": "tamano_fuente",
+            "fieldtype": "Select",
+            "label": "Tama\u00f1o de Fuente (px)",
+            "options": "8\n9\n10\n11\n12"
+        },
+        {
+            "fieldname": "column_break_diseno",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "0",
+            "fieldname": "mostrar_logo",
+            "fieldtype": "Check",
+            "label": "Mostrar Logo de Compa\u00f1\u00eda"
+        },
+        {
+            "default": "center",
+            "fieldname": "alinear_header",
+            "fieldtype": "Select",
+            "label": "Alineaci\u00f3n del Encabezado",
+            "options": "left\ncenter\nright"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_contenido",
+            "fieldtype": "Section Break",
+            "label": "Plantilla HTML - Encabezado"
+        },
+        {
+            "description": "Variables disponibles: {{ doc.name }}, {{ doc.fecha_y_hora_de_venta }}, {{ doc.cliente }}, {{ perfil_pos }}, {{ compania }}",
+            "fieldname": "header_html",
+            "fieldtype": "Code",
+            "label": "HTML del Encabezado",
+            "options": "HTML"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_items",
+            "fieldtype": "Section Break",
+            "label": "Plantilla HTML - Items"
+        },
+        {
+            "description": "Variables disponibles: {{ item.producto }}, {{ item.cantidad }}, {{ item.precio_unitario }}, {{ item.total_linea }}",
+            "fieldname": "items_html",
+            "fieldtype": "Code",
+            "label": "HTML de Items",
+            "options": "HTML"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_footer",
+            "fieldtype": "Section Break",
+            "label": "Plantilla HTML - Pie de P\u00e1gina"
+        },
+        {
+            "description": "Variables disponibles: {{ doc.subtotal }}, {{ doc.total_impuestos }}, {{ doc.total_final }}, {{ doc.cambio }}, {{ metodos_pago }}",
+            "fieldname": "footer_html",
+            "fieldtype": "Code",
+            "label": "HTML del Pie de P\u00e1gina",
+            "options": "HTML"
+        },
+        {
+            "collapsible": 1,
+            "fieldname": "section_break_estilos",
+            "fieldtype": "Section Break",
+            "label": "Estilos CSS Personalizados"
+        },
+        {
+            "description": "CSS adicional para personalizar el ticket",
+            "fieldname": "estilos_css",
+            "fieldtype": "Code",
+            "label": "CSS Personalizado",
+            "options": "CSS"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-12-02 18:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Formato de Ticket",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "POS Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "track_changes": 1
+}

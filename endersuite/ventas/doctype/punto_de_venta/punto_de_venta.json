@@ -1,0 +1,116 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:nombre_punto",
+    "creation": "2025-11-29 13:06:34.694679",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "section_break_info",
+        "nombre_punto",
+        "ubicacion",
+        "column_break_1",
+        "responsable",
+        "almacen_predeterminado",
+        "section_break_opciones",
+        "permite_venta_sin_stock",
+        "activo"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_break_info",
+            "fieldtype": "Section Break",
+            "label": "Informaci\u00f3n del Punto de Venta"
+        },
+        {
+            "fieldname": "nombre_punto",
+            "fieldtype": "Data",
+            "label": "Nombre del Punto",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "ubicacion",
+            "fieldtype": "Data",
+            "label": "Ubicaci\u00f3n"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "responsable",
+            "fieldtype": "Link",
+            "label": "Responsable",
+            "options": "User"
+        },
+        {
+            "fieldname": "almacen_predeterminado",
+            "fieldtype": "Link",
+            "label": "Almac\u00e9n Predeterminado",
+            "options": "Almacen"
+        },
+        {
+            "fieldname": "section_break_opciones",
+            "fieldtype": "Section Break",
+            "label": "Opciones"
+        },
+        {
+            "default": "0",
+            "fieldname": "permite_venta_sin_stock",
+            "fieldtype": "Check",
+            "label": "Permite Venta Sin Stock"
+        },
+        {
+            "default": "1",
+            "fieldname": "activo",
+            "fieldtype": "Check",
+            "label": "Activo"
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-29 14:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Punto de Venta",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Gerente de Ventas",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "Cajero POS"
+        }
+    ],
+    "row_format": "Dynamic",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": []
+}

@@ -1,0 +1,178 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:nombre_perfil",
+    "creation": "2025-11-28 17:20:48.108631",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "section_break_info",
+        "nombre_perfil",
+        "punto_de_venta",
+        "column_break_1",
+        "lista_de_precios",
+        "almacen",
+        "centro_de_costos",
+        "section_break_metodos",
+        "metodos_de_pago",
+        "section_break_opciones",
+        "requiere_cliente",
+        "permite_descuento",
+        "auto_print_ticket",
+        "formato_ticket",
+        "column_break_opciones",
+        "habilitado",
+        "section_break_usuarios",
+        "usuarios_asignados"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_break_info",
+            "fieldtype": "Section Break",
+            "label": "Informaci\u00f3n del Perfil"
+        },
+        {
+            "fieldname": "nombre_perfil",
+            "fieldtype": "Data",
+            "label": "Nombre del Perfil",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "punto_de_venta",
+            "fieldtype": "Link",
+            "label": "Punto de Venta",
+            "options": "Punto de Venta"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "lista_de_precios",
+            "fieldtype": "Link",
+            "label": "Lista de Precios",
+            "options": "Lista de Precios",
+            "reqd": 1
+        },
+        {
+            "fieldname": "almacen",
+            "fieldtype": "Link",
+            "label": "Almac\u00e9n",
+            "options": "Almacen",
+            "reqd": 1
+        },
+        {
+            "fieldname": "centro_de_costos",
+            "fieldtype": "Data",
+            "label": "Centro de Costos"
+        },
+        {
+            "fieldname": "section_break_metodos",
+            "fieldtype": "Section Break",
+            "label": "M\u00e9todos de Pago"
+        },
+        {
+            "fieldname": "metodos_de_pago",
+            "fieldtype": "Table",
+            "label": "M\u00e9todos de Pago Disponibles",
+            "options": "Metodos de Pago POS"
+        },
+        {
+            "fieldname": "section_break_opciones",
+            "fieldtype": "Section Break",
+            "label": "Opciones"
+        },
+        {
+            "default": "0",
+            "fieldname": "requiere_cliente",
+            "fieldtype": "Check",
+            "label": "Requiere Cliente"
+        },
+        {
+            "default": "1",
+            "fieldname": "permite_descuento",
+            "fieldtype": "Check",
+            "label": "Permite Descuento"
+        },
+        {
+            "default": "0",
+            "fieldname": "auto_print_ticket",
+            "fieldtype": "Check",
+            "label": "Imprimir Ticket Autom\u00e1ticamente"
+        },
+        {
+            "fieldname": "formato_ticket",
+            "fieldtype": "Link",
+            "label": "Formato de Ticket",
+            "options": "Formato de Ticket"
+        },
+        {
+            "fieldname": "column_break_opciones",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "1",
+            "fieldname": "habilitado",
+            "fieldtype": "Check",
+            "label": "Habilitado"
+        },
+        {
+            "fieldname": "section_break_usuarios",
+            "fieldtype": "Section Break",
+            "label": "Usuarios Asignados"
+        },
+        {
+            "fieldname": "usuarios_asignados",
+            "fieldtype": "Table",
+            "label": "Usuarios Asignados",
+            "options": "Usuarios Asignados POS"
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-29 14:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Perfil de POS",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Gerente de Ventas",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "role": "Cajero POS"
+        }
+    ],
+    "row_format": "Dynamic",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": []
+}

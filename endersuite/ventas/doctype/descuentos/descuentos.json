@@ -1,0 +1,156 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:nombre_descuento",
+    "creation": "2025-11-28 17:21:18.550970",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "section_break_info",
+        "nombre_descuento",
+        "tipo",
+        "valor",
+        "column_break_1",
+        "aplicable_a",
+        "producto",
+        "categoria",
+        "section_break_vigencia",
+        "fecha_inicio",
+        "fecha_fin",
+        "column_break_vigencia",
+        "lista_de_precios",
+        "minimo_cantidad",
+        "habilitado"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_break_info",
+            "fieldtype": "Section Break",
+            "label": "Informaci\u00f3n del Descuento"
+        },
+        {
+            "fieldname": "nombre_descuento",
+            "fieldtype": "Data",
+            "label": "Nombre del Descuento",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "default": "Porcentaje",
+            "fieldname": "tipo",
+            "fieldtype": "Select",
+            "label": "Tipo",
+            "options": "Porcentaje\nMonto Fijo",
+            "reqd": 1
+        },
+        {
+            "fieldname": "valor",
+            "fieldtype": "Float",
+            "label": "Valor",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "Global",
+            "fieldname": "aplicable_a",
+            "fieldtype": "Select",
+            "label": "Aplicable A",
+            "options": "Global\nProducto\nCategor\u00eda",
+            "reqd": 1
+        },
+        {
+            "depends_on": "eval:doc.aplicable_a=='Producto'",
+            "fieldname": "producto",
+            "fieldtype": "Link",
+            "label": "Producto",
+            "options": "Producto"
+        },
+        {
+            "depends_on": "eval:doc.aplicable_a=='Categor\u00eda'",
+            "fieldname": "categoria",
+            "fieldtype": "Link",
+            "label": "Categor\u00eda",
+            "options": "Categoria"
+        },
+        {
+            "fieldname": "section_break_vigencia",
+            "fieldtype": "Section Break",
+            "label": "Vigencia"
+        },
+        {
+            "default": "Today",
+            "fieldname": "fecha_inicio",
+            "fieldtype": "Date",
+            "label": "Fecha de Inicio",
+            "reqd": 1
+        },
+        {
+            "fieldname": "fecha_fin",
+            "fieldtype": "Date",
+            "label": "Fecha de Fin"
+        },
+        {
+            "fieldname": "column_break_vigencia",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "lista_de_precios",
+            "fieldtype": "Link",
+            "label": "Lista de Precios",
+            "options": "Lista de Precios"
+        },
+        {
+            "default": "1",
+            "fieldname": "minimo_cantidad",
+            "fieldtype": "Float",
+            "label": "M\u00ednima Cantidad"
+        },
+        {
+            "default": "1",
+            "fieldname": "habilitado",
+            "fieldtype": "Check",
+            "label": "Habilitado"
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-29 14:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Descuentos",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "read": 1,
+            "role": "Gerente de Ventas",
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "Cajero POS"
+        }
+    ],
+    "row_format": "Dynamic",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": []
+}

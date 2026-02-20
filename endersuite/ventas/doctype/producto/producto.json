@@ -1,0 +1,262 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:nombre_del_producto",
+    "creation": "2025-09-23 16:46:04.276983",
+    "default_view": "List",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "informaci\u00f3n_del_producto_section",
+        "nombre_del_producto",
+        "imagen",
+        "sku",
+        "column_break_zuuq",
+        "costo",
+        "tipo_de_impuesto",
+        "column_break_yczm",
+        "categoria",
+        "unidad_de_medida_uom",
+        "inventario_tab",
+        "section_break_inventario",
+        "tipo_producto",
+        "mantener_stock",
+        "column_break_inv",
+        "cantidad_disponible",
+        "stock_minimo",
+        "almacen_predeterminado",
+        "section_break_trazabilidad",
+        "requiere_lote",
+        "requiere_serie",
+        "section_break_izxr",
+        "table_rzld",
+        "section_break_rxom",
+        "descripcion",
+        "fiscal_tab",
+        "informacion_que_sera_compartida_en_el_sat_section",
+        "clave_sat",
+        "clave_unidad_sat"
+    ],
+    "fields": [
+        {
+            "fieldname": "informaci\u00f3n_del_producto_section",
+            "fieldtype": "Section Break",
+            "label": "Informaci\u00f3n del producto"
+        },
+        {
+            "fieldname": "nombre_del_producto",
+            "fieldtype": "Data",
+            "label": "Nombre del producto",
+            "unique": 1
+        },
+        {
+            "fieldname": "column_break_yczm",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "categoria",
+            "fieldtype": "Link",
+            "in_standard_filter": 1,
+            "label": "Categoria",
+            "options": "Categoria"
+        },
+        {
+            "fieldname": "sku",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "SKU",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "column_break_zuuq",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "costo",
+            "fieldtype": "Currency",
+            "label": "Costo"
+        },
+        {
+            "fieldname": "unidad_de_medida_uom",
+            "fieldtype": "Link",
+            "label": "Unidad de Medida (UOM)",
+            "options": "UM"
+        },
+        {
+            "fieldname": "inventario_tab",
+            "fieldtype": "Tab Break",
+            "label": "Inventario"
+        },
+        {
+            "fieldname": "section_break_inventario",
+            "fieldtype": "Section Break",
+            "label": "Control de Inventario"
+        },
+        {
+            "default": "Bien",
+            "fieldname": "tipo_producto",
+            "fieldtype": "Select",
+            "label": "Tipo de Producto",
+            "options": "Bien\nServicio"
+        },
+        {
+            "default": "1",
+            "fieldname": "mantener_stock",
+            "fieldtype": "Check",
+            "label": "Mantener Stock"
+        },
+        {
+            "fieldname": "column_break_inv",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "0",
+            "depends_on": "eval:doc.mantener_stock==1",
+            "fieldname": "cantidad_disponible",
+            "fieldtype": "Float",
+            "label": "Cantidad Disponible",
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "depends_on": "eval:doc.mantener_stock==1",
+            "fieldname": "stock_minimo",
+            "fieldtype": "Float",
+            "label": "Stock M\u00ednimo"
+        },
+        {
+            "depends_on": "eval:doc.mantener_stock==1",
+            "fieldname": "almacen_predeterminado",
+            "fieldtype": "Link",
+            "label": "Almac\u00e9n Predeterminado",
+            "options": "Almacen"
+        },
+        {
+            "collapsible": 1,
+            "depends_on": "eval:doc.mantener_stock==1",
+            "fieldname": "section_break_trazabilidad",
+            "fieldtype": "Section Break",
+            "label": "Trazabilidad"
+        },
+        {
+            "default": "0",
+            "fieldname": "requiere_lote",
+            "fieldtype": "Check",
+            "label": "Requiere Lote"
+        },
+        {
+            "default": "0",
+            "fieldname": "requiere_serie",
+            "fieldtype": "Check",
+            "label": "Requiere Serie"
+        },
+        {
+            "fieldname": "section_break_rxom",
+            "fieldtype": "Section Break",
+            "label": "Descripcion de tu producto"
+        },
+        {
+            "fieldname": "descripcion",
+            "fieldtype": "Text Editor",
+            "label": "Descripcion"
+        },
+        {
+            "fieldname": "tipo_de_impuesto",
+            "fieldtype": "Link",
+            "label": "Tipo de impuesto",
+            "options": "Impuestos"
+        },
+        {
+            "fieldname": "fiscal_tab",
+            "fieldtype": "Tab Break",
+            "label": "Fiscal"
+        },
+        {
+            "fieldname": "informacion_que_sera_compartida_en_el_sat_section",
+            "fieldtype": "Section Break",
+            "label": "Informacion que sera compartida en el SAT"
+        },
+        {
+            "description": "Clave que estableciste o quieras establecer en el SAT",
+            "fieldname": "clave_sat",
+            "fieldtype": "Data",
+            "label": "Clave SAT"
+        },
+        {
+            "description": "Clave de unidad que estableciste o quieras establecer en el SAT",
+            "fieldname": "clave_unidad_sat",
+            "fieldtype": "Data",
+            "label": "Clave unidad SAT"
+        },
+        {
+            "fieldname": "section_break_izxr",
+            "fieldtype": "Section Break",
+            "label": "Lista de Precios"
+        },
+        {
+            "fieldname": "table_rzld",
+            "fieldtype": "Table",
+            "options": "Precios productos"
+        },
+        {
+            "fieldname": "imagen",
+            "fieldtype": "Attach Image",
+            "label": "Imagen",
+            "read_only": 1
+        }
+    ],
+    "grid_page_length": 50,
+    "image_field": "imagen",
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-28 20:24:43.564412",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Producto",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Gerente de Ventas",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Administrador de Empresa",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "row_format": "Dynamic",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": []
+}

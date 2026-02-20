@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.log
+*.sqlite3
+*.swp
+.env
+.DS_Store
+node_modules/
+*.map
+.venv/
+.envrc
+assets/
+dist/
+*.cache
+.vscode/
+.idea/

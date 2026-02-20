@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CV-.YYYY.-.####",
+ "creation": "2025-11-17 15:41:58.969701",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_78ox",
+  "column_break_gmbi",
+  "amended_from",
+  "cliente",
+  "fecha_de_cotizacion",
+  "valido_hasta",
+  "estado",
+  "compa\u00f1ia",
+  "moneda",
+  "articulos",
+  "terminos_de_pago",
+  "subtotal",
+  "total_de_impuestos",
+  "total_general",
+  "vendedor"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_78ox",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Cotizaciones",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_gmbi",
+   "fieldtype": "Column Break",
+   "options": "Producto"
+  },
+  {
+   "fieldname": "cliente",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Cliente",
+   "options": "Cliente",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "fecha_de_cotizacion",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Fecha de cotizacion",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valido_hasta",
+   "fieldtype": "Date",
+   "label": "Valido hasta"
+  },
+  {
+   "default": "Borrador",
+   "fieldname": "estado",
+   "fieldtype": "Select",
+   "label": "Estado",
+   "options": "Borrador\nEnviado\nOrdenado\nCancelado\nExpirado"
+  },
+  {
+   "fieldname": "compa\u00f1ia",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Compa\u00f1ia",
+   "options": "Compania",
+   "reqd": 1
+  },
+  {
+   "fieldname": "moneda",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Moneda",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "articulos",
+   "fieldtype": "Table",
+   "label": "Articulos",
+   "options": "Producto de Cotizacion"
+  },
+  {
+   "fieldname": "terminos_de_pago",
+   "fieldtype": "Link",
+   "label": "Terminos de pago",
+   "options": "Terminos de pago"
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_general",
+   "fieldtype": "Currency",
+   "label": "Total General",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_de_impuestos",
+   "fieldtype": "Currency",
+   "label": "Total Impuestos",
+   "read_only": 1
+  },
+  {
+   "fieldname": "vendedor",
+   "fieldtype": "Link",
+   "label": "Vendedor",
+   "options": "Vendedor"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Orden de venta",
+   "link_fieldname": "referencia_cotizacion",
+   "table_fieldname": "articulos"
+  }
+ ],
+ "modified": "2025-11-25 02:48:28.386218",
+ "modified_by": "Administrator",
+ "module": "Ventas",
+ "name": "Cotizaciones",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nombre_del_metodo_de_pago",
+ "creation": "2025-11-30 13:21:48.239784",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nombre_del_metodo_de_pago",
+  "column_break_qsbr",
+  "cuenta_contable"
+ ],
+ "fields": [
+  {
+   "description": "Ej: Efectivo, Tarjeta, Cheque, etc",
+   "fieldname": "nombre_del_metodo_de_pago",
+   "fieldtype": "Data",
+   "label": "Nombre del metodo de pago",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_qsbr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cuenta_contable",
+   "fieldtype": "Link",
+   "label": "Cuenta contable",
+   "options": "Cuenta"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-30 13:24:37.002978",
+ "modified_by": "Administrator",
+ "module": "Ventas",
+ "name": "Metodos de Pago",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

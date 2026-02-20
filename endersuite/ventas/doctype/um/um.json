@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:unidad_de_medida_uom",
+ "creation": "2025-09-23 19:21:36.040232",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "unidad_de_medida_section",
+  "unidad_de_medida_uom"
+ ],
+ "fields": [
+  {
+   "fieldname": "unidad_de_medida_section",
+   "fieldtype": "Section Break",
+   "label": "Unidad de Medida"
+  },
+  {
+   "fieldname": "unidad_de_medida_uom",
+   "fieldtype": "Data",
+   "label": "Unidad de Medida (UOM)",
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-23 19:32:17.488215",
+ "modified_by": "Administrator",
+ "module": "Ventas",
+ "name": "UM",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

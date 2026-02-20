@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2025-11-14 02:26:07.005379",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fecha_contable",
+  "cuenta",
+  "debe",
+  "haber",
+  "poliza_de_origen"
+ ],
+ "fields": [
+  {
+   "fieldname": "fecha_contable",
+   "fieldtype": "Date",
+   "label": "Fecha contable"
+  },
+  {
+   "fieldname": "cuenta",
+   "fieldtype": "Link",
+   "label": "Cuenta",
+   "options": "Catalogo"
+  },
+  {
+   "fieldname": "debe",
+   "fieldtype": "Currency",
+   "label": "Debe"
+  },
+  {
+   "fieldname": "haber",
+   "fieldtype": "Currency",
+   "label": "Haber"
+  },
+  {
+   "fieldname": "poliza_de_origen",
+   "fieldtype": "Link",
+   "label": "Poliza de Origen",
+   "options": "poliza_movimiento"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-11-28 13:01:52.398651",
+ "modified_by": "Administrator",
+ "module": "Contabilidad",
+ "name": "Movimiento Contable",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

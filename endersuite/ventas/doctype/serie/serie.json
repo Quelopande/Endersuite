@@ -1,0 +1,102 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "field:numero_serie",
+    "creation": "2025-11-29 14:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "section_break_info",
+        "numero_serie",
+        "producto",
+        "almacen",
+        "column_break_1",
+        "estado",
+        "nota_de_venta"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_break_info",
+            "fieldtype": "Section Break",
+            "label": "Informaci\u00f3n de la Serie"
+        },
+        {
+            "fieldname": "numero_serie",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "N\u00famero de Serie",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "producto",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Producto",
+            "options": "Producto",
+            "reqd": 1
+        },
+        {
+            "fieldname": "almacen",
+            "fieldtype": "Link",
+            "label": "Almac\u00e9n",
+            "options": "Almacen"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "Disponible",
+            "fieldname": "estado",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Estado",
+            "options": "Disponible\nVendido\nDa\u00f1ado",
+            "reqd": 1
+        },
+        {
+            "fieldname": "nota_de_venta",
+            "fieldtype": "Link",
+            "label": "Nota de Venta",
+            "options": "Nota de Venta",
+            "read_only": 1
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2025-11-29 14:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Ventas",
+    "name": "Serie",
+    "naming_rule": "By fieldname",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "read": 1,
+            "role": "Gerente de Ventas",
+            "write": 1
+        },
+        {
+            "read": 1,
+            "role": "Cajero POS"
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

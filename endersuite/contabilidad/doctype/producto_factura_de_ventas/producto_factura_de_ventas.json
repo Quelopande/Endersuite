@@ -1,0 +1,83 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2025-11-14 01:39:16.447585",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "producto__servicio",
+        "clave_sat",
+        "clave_unidad_sat",
+        "cantidad",
+        "unidad_de_medida",
+        "descripcion",
+        "valor",
+        "descuento"
+    ],
+    "fields": [
+        {
+            "fieldname": "producto__servicio",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Producto / Servicio",
+            "options": "Producto"
+        },
+        {
+            "fetch_from": "producto__servicio.clave_sat",
+            "fieldname": "clave_sat",
+            "fieldtype": "Data",
+            "label": "Clave SAT"
+        },
+        {
+            "fetch_from": "producto__servicio.clave_unidad_sat",
+            "fieldname": "clave_unidad_sat",
+            "fieldtype": "Data",
+            "label": "Clave unidad SAT"
+        },
+        {
+            "fieldname": "cantidad",
+            "fieldtype": "Float",
+            "in_list_view": 1,
+            "label": "Cantidad"
+        },
+        {
+            "fetch_from": "producto__servicio.unidad_de_medida_uom",
+            "fieldname": "unidad_de_medida",
+            "fieldtype": "Data",
+            "label": "Unidad de Medida"
+        },
+        {
+            "fetch_from": "producto__servicio.descripcion",
+            "fieldname": "descripcion",
+            "fieldtype": "Data",
+            "label": "Descripcion"
+        },
+        {
+            "fieldname": "valor",
+            "fieldtype": "Currency",
+            "in_list_view": 1,
+            "label": "Precio"
+        },
+        {
+            "fieldname": "descuento",
+            "fieldtype": "Percent",
+            "in_list_view": 1,
+            "label": "Descuento"
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2025-11-14 01:48:07.582137",
+    "modified_by": "Administrator",
+    "module": "Contabilidad",
+    "name": "Producto Factura de Ventas",
+    "owner": "Administrator",
+    "permissions": [],
+    "row_format": "Dynamic",
+    "sort_field": "creation",
+    "sort_order": "DESC",
+    "states": []
+}

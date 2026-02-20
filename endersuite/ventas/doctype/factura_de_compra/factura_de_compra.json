@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "FC-{YYYY}-{MM}-{#####}",
+ "creation": "2025-11-28 14:53:51.305507",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "datos_proveedor",
+  "proveedor",
+  "rfc_proveedor",
+  "r\u00e9gimen_fiscal",
+  "datos_receptor",
+  "compania",
+  "rfc_receptor",
+  "seccion_productos",
+  "tabla_productos_compra",
+  "seccion_totales",
+  "subtotal",
+  "column_break_ddhk",
+  "descuento_total",
+  "total_impuestos_trasladados",
+  "total_impuestos_retenidos",
+  "total",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "datos_proveedor",
+   "fieldtype": "Section Break",
+   "label": "Datos del Proveedor"
+  },
+  {
+   "fieldname": "proveedor",
+   "fieldtype": "Link",
+   "label": "Proveedor",
+   "options": "Cliente"
+  },
+  {
+   "fieldname": "rfc_proveedor",
+   "fieldtype": "Data",
+   "label": "RFC Del Proveedor"
+  },
+  {
+   "fieldname": "r\u00e9gimen_fiscal",
+   "fieldtype": "Data",
+   "label": "R\u00e9gimen Fiscal"
+  },
+  {
+   "fieldname": "datos_receptor",
+   "fieldtype": "Section Break",
+   "label": "Datos del Receptor"
+  },
+  {
+   "fieldname": "compania",
+   "fieldtype": "Link",
+   "label": "Compa\u00f1\u00eda",
+   "options": "Compania"
+  },
+  {
+   "fieldname": "rfc_receptor",
+   "fieldtype": "Data",
+   "label": "Tu RFC"
+  },
+  {
+   "fieldname": "seccion_productos",
+   "fieldtype": "Section Break",
+   "label": "Productos"
+  },
+  {
+   "fieldname": "tabla_productos_compra",
+   "fieldtype": "Table",
+   "label": "Tabla de Productos",
+   "options": "Producto Factura de Compra"
+  },
+  {
+   "fieldname": "seccion_totales",
+   "fieldtype": "Section Break",
+   "label": "Totales"
+  },
+  {
+   "fieldname": "subtotal",
+   "fieldtype": "Currency",
+   "label": "Subtotal"
+  },
+  {
+   "fieldname": "column_break_ddhk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "descuento_total",
+   "fieldtype": "Currency",
+   "label": "Descuento Total"
+  },
+  {
+   "fieldname": "total_impuestos_trasladados",
+   "fieldtype": "Currency",
+   "label": "Imp. Trasladados"
+  },
+  {
+   "fieldname": "total_impuestos_retenidos",
+   "fieldtype": "Currency",
+   "label": "Imp. Retenidos"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Factura de Compra",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-11-28 15:28:29.120829",
+ "modified_by": "Administrator",
+ "module": "Ventas",
+ "name": "Factura de Compra",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
